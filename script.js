@@ -321,6 +321,25 @@ canvas.addEventListener('touchstart', (e) => {
     triggerInteraction();
 });
 
+// Lógica de Música
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+let isMusicPlaying = false;
+
+if (musicToggle && bgMusic) {
+    musicToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evitar que el clic pase al canvas
+        if (isMusicPlaying) {
+            bgMusic.pause();
+            musicToggle.textContent = '🎵 Reproducir Canción';
+        } else {
+            bgMusic.play();
+            musicToggle.textContent = '⏸️ Pausar Canción';
+        }
+        isMusicPlaying = !isMusicPlaying;
+    });
+}
+
 // Iniciar aplicación
 init();
 animate();
