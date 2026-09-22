@@ -49,16 +49,44 @@ body, html {
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
     color: #ffffff; /* Texto en blanco para máxima visibilidad */
-    font-size: 2.8rem; /* Tamaño optimizado para textos largos */
+    font-size: 2.2rem; /* Tamaño optimizado para textos largos con esta fuente */
     text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 15px rgba(255, 255, 255, 0.4);
-    line-height: 1.4;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Controles de Audio */
+.audio-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+#musicToggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#musicToggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .message-container {
         top: 75%;
@@ -67,5 +95,13 @@ h1 {
     }
     .message-container.show {
         transform: translate(-50%, -65%);
+    }
+    .audio-controls {
+        top: 15px;
+        right: 15px;
+    }
+    #musicToggle {
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
 }
